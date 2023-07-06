@@ -14,3 +14,12 @@ dev/
 yarn-error.log
 .stylelintcache
 .env
+
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
