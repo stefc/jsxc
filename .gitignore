@@ -13,7 +13,11 @@ dev/
 /dist/
 yarn-error.log
 .stylelintcache
-.env
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # yarn
 .yarn/*

@@ -19,10 +19,13 @@
     "type": "git",
     "url": "https://github.com/jsxc/jsxc"
   },
-  "type": "module",
   "packageManager": "yarn@3.3.1",
   "scripts": {
-    "start": "webpack --progress --config webpack.config.js --mode production",
+    "start": "BROWSER='google chrome' vite",
+    "build:prod": "vite build --mode production",
+    "build:dev": "vite build --mode development",
+    "preview": "vite preview --port 8080",
+    "start-old": "webpack --progress --config webpack.config.js --mode production",
     "watch": "webpack --progress --config webpack.config.js --mode development --watch",
     "dev": "webpack serve --progress --mode development",
     "test": "karma start --single-run",
@@ -34,13 +37,6 @@
     "checking-typescript-format": "eslint \"src/**/*.ts\" && prettier src/ --check",
     "checking-typescript": "tsc --noEmit",
     "lint:staged": "lint-staged"
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "node scripts/prepare-commit-msg.js HUSKY_GIT_PARAMS",
-      "pre-commit": "run-s lint:staged checking-typescript",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "src/*": [
@@ -81,7 +77,6 @@
     "fork-ts-checker-webpack-plugin": "^6.2.0",
     "git-branch": "^2.0.1",
     "git-revision-webpack-plugin": "^3.0.6",
-    "husky": "^4.3.0",
     "inquirer": "^8.0.0",
     "istanbul": "^0.4.5",
     "js-beautify": "^1.13.0",
@@ -137,6 +132,7 @@
     "jingle": "^3.0.3",
     "jingle-session": "^2.0.3",
     "jquery": "^3.5.1",
+    "js-sha1": "^0.6.0",
     "jxt": "^4.0.2",
     "jxt-xmpp": "^3.3.0",
     "jxt-xmpp-types": "^3.0.0",
